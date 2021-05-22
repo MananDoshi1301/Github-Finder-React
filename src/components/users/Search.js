@@ -5,6 +5,10 @@ export class Search extends Component {
     text: '',
   };
 
+  static propTypes = {
+    searchUsers: PropTypes.func.isRequired,
+  };
+
   onChange = (event) =>
     this.setState({ [event.target.name]: event.target.value });
 

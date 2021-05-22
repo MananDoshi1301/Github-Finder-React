@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 export class Search extends Component {
   state = {
@@ -6,7 +7,7 @@ export class Search extends Component {
   };
 
   static propTypes = {
-    searchUsers: PropTypes.func.isRequired,
+    searchUsers: PropTypes.func.isRequired
   };
 
   onChange = (event) =>

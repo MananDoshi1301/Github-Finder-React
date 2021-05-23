@@ -7,12 +7,10 @@ import Search from './components/users/Search';
 import Alert from './components/layouts/Alert';
 import GithubState from './context/github/GithubState';
 import './App.css';
-import axios from 'axios';
 import About from './components/pages/About';
 
 const App = () => {
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(false);
+
   const [alert, setAlert] = useState(null);
 
   // async componentDidMount() {
@@ -25,14 +23,7 @@ const App = () => {
 
 
 
-  const getUserRepos = async (username) => {
-    setLoading(true);
 
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
-
-    setRepos(res.data);
-    setLoading(false);
-  }
 
 
 
@@ -66,14 +57,7 @@ const App = () => {
                 exact path={'/about'}
                 component={About} />
 
-              <Route exact path='/user/:login' render={(props) => {
-                return (
-                  <User {...props}
-                    getUserRepos={getUserRepos}
-                    repos={repos}
-                  />
-                )
-              }} />
+              <Route exact path='/user/:login' component={User} />
             </Switch>
 
           </div>

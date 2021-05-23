@@ -4,7 +4,7 @@ import UserItem from './UserItem';
 import Spinner from "../layouts/Spinner";
 import GithubContext from '../../context/github/githubContext';
 
-const Users = ({ }) => {
+const Users = () => {
 
   const githubContext = useContext(GithubContext);
 
@@ -22,12 +22,6 @@ const Users = ({ }) => {
       </div>
     )
   }
-}
-
-
-Users.propTypes = {
-  user: PropTypes.array,
-  loading: PropTypes.bool.isRequired,
 }
 
 const userStyle = {

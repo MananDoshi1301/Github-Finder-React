@@ -20,7 +20,7 @@ const Users = ({ users, loading }) => {
 
 
 Users.propTypes = {
-  user: PropTypes.array.isRequired,
+  user: PropTypes.array,
   loading: PropTypes.bool.isRequired,
 }
 

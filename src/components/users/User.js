@@ -42,7 +42,7 @@ const User = ({ loading, repos, user, getUser, getUserRepos, match }) => {
           <img src={avatar_url}
             className='round-img'
             style={{ width: '150px' }}
-            alt="" srcset="" />
+            alt="" />
           <h1>{name}</h1>
           <p>Location: {location}</p>
         </div>
